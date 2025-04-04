@@ -30,6 +30,13 @@
   border-color: #0070f3;
 }
 
+.filterButton {
+  border-radius: 7px;
+  width: 70px;
+  height: 50px;
+  cursor: pointer;
+}
+
 .card {
   width: 320px;
   border: 1px solid #ddd;

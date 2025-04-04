@@ -1,13 +1,29 @@
 "use client";
+import { useState } from "react";
 import { data } from "../../../data/dummyData";
 import classes from "../../../styles/event.module.css";
 
 export default function Event() {
+  const [month, setMonth] = useState("");
+  const [location, setLocation] = useState("");
+  const [genre, setGenre] = useState("");
+  const [filtedData, setFilterData] = useState(data);
+
+  function changeMonth(e) {}
+
+  function changeLocation(e) {}
+
+  function changeGenre(e) {}
+
+  function filterData() {
+    return;
+  }
   return (
     <div>
       <div className={classes.option}>
-        <select>
+        <select onChange={changeMonth}>
           <option value="">시기</option>
+          <option value="">진행중</option>
           <option value="1">1월</option>
           <option value="2">2월</option>
           <option value="3">3월</option>
@@ -21,7 +37,7 @@ export default function Event() {
           <option value="11">11월</option>
           <option value="12">12월</option>
         </select>
-        <select>
+        <select onChange={changeLocation}>
           <option value="">전체 지역</option>
           <option value="강남구">강남구</option>
           <option value="강동구">강동구</option>
@@ -49,10 +65,24 @@ export default function Event() {
           <option value="중구">중구</option>
           <option value="중랑구">중랑구</option>
         </select>
+        <select onChange={changeGenre}>
+          <option value="">장르</option>
+          <option value="축제">축제</option>
+          <option value="무용">무용</option>
+          <option value="연극">연극</option>
+          <option value="콘서트">콘서트</option>
+          <option value="클래식">클래식</option>
+          <option value="교육/체험">교육/체험</option>
+          <option value="전시/미술">전시/미술</option>
+          <option value="뮤지컬/오페라">뮤지컬/오페라</option>
+        </select>
+        <button className={classes.filterButton} onClick={filterData}>
+          검색
+        </button>
       </div>
 
       <div className={classes.container}>
-        {data.map((event, index) => (
+        {filtedData.map((event, index) => (
           <div key={index} className={classes.card}>
             <img
               src={event.main_img}
@@ -68,7 +98,9 @@ export default function Event() {
               <p>
                 <strong>장소:</strong> {event.place}
               </p>
-
+              <p>
+                <strong>장르:</strong> {event.codename}
+              </p>
               <a
                 href={event.hmpg_addr}
                 target="_blank"
