@@ -1,83 +1,120 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
-}
+/* event.module.css */
 
 .option {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2rem auto;
   flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
 }
 
 .option select {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #fff;
+  font-size: 1rem;
+  background-color: white;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: border-color 0.2s ease-in-out;
+  transition: border 0.3s ease;
 }
 
-.option select:focus {
-  outline: none;
+.option select:hover {
   border-color: #0070f3;
 }
 
-.filterButton {
-  border-radius: 7px;
-  width: 70px;
-  height: 50px;
+.refreshButton {
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 0.3rem;
+  transition: transform 0.2s ease;
+}
+
+.refreshButton img {
+  width: 28px;
+  height: 28px;
+}
+
+.refreshButton:hover {
+  transform: rotate(90deg);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
-  width: 320px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  background-color: #fff;
-  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .image {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
 }
 
 .content {
-  padding: 1rem;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
 .title {
   font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.4rem;
+}
+
+.content p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
 }
 
 .button {
-  display: inline-block;
-  margin-top: 1rem;
+  margin-top: auto;
+  align-self: flex-start;
   padding: 0.5rem 1rem;
   background-color: #0070f3;
   color: white;
   text-decoration: none;
+  font-weight: 500;
   border-radius: 8px;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s ease;
 }
 
 .button:hover {
-  background-color: #005ac1;
+  background-color: #0059c1;
+}
+
+/* event.module.css */
+.likeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.likeButton:hover {
+  transform: scale(1.2);
 }
